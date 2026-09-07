@@ -14,11 +14,8 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-
     background: #111;
-
     color: #fff;
-
     overflow-x: hidden;
 }
 
@@ -29,18 +26,14 @@ body {
 
 nav {
     position: fixed;
-
     top: 0;
     left: 0;
 
     width: 100%;
-
     height: 80px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 6%;
@@ -50,35 +43,26 @@ nav {
     background: rgba(17, 17, 17, 0.85);
 
     backdrop-filter: blur(12px);
-
     -webkit-backdrop-filter: blur(12px);
 }
 
 .logo {
     font-size: 22px;
-
     font-weight: 900;
-
     letter-spacing: 4px;
-
-    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
-
     align-items: center;
-
     gap: 30px;
 }
 
 .nav-links a {
     color: #fff;
-
     text-decoration: none;
 
     font-size: 12px;
-
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -98,40 +82,64 @@ nav {
 .hero {
     min-height: 100vh;
 
-    display: flex;
+    position: relative;
 
+    display: flex;
     align-items: center;
 
     padding: 140px 8% 100px;
 
-    position: relative;
+    overflow: hidden;
 
-    background:
-        radial-gradient(
-            circle at 80% 30%,
-            #383838 0%,
-            #191919 25%,
-            #111 55%
-        );
+    background: #111;
 }
 
-.hero::before {
-    content: "";
 
+/* ==================================================
+   HERO BANNER
+================================================== */
+
+.hero-banner {
     position: absolute;
 
     inset: 0;
 
+    z-index: 0;
+}
+
+.hero-banner img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    opacity: 0.45;
+}
+
+
+/* DARK OVERLAY */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
     background:
         linear-gradient(
-            135deg,
-            transparent 0%,
-            rgba(255,255,255,0.02) 50%,
-            transparent 100%
+            90deg,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.25)
         );
-
-    pointer-events: none;
 }
+
+
+/* HERO CONTENT */
 
 .hero-content {
     position: relative;
@@ -146,7 +154,7 @@ nav {
 
     letter-spacing: 7px;
 
-    color: #aaa;
+    color: #ccc;
 
     margin-bottom: 25px;
 }
@@ -169,8 +177,6 @@ nav {
     color: transparent;
 
     -webkit-text-stroke: 2px #fff;
-
-    text-stroke: 2px #fff;
 }
 
 .hero-text {
@@ -178,14 +184,12 @@ nav {
 
     font-size: 20px;
 
-    color: #aaa;
-
-    max-width: 500px;
+    color: #ccc;
 }
 
 
 /* ==================================================
-   GENERAL BUTTON
+   BUTTONS
 ================================================== */
 
 .button {
@@ -219,6 +223,30 @@ nav {
     color: #111;
 
     transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   BANNER
+================================================== */
+
+.banner {
+    width: 100%;
+    height: 350px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -264,10 +292,10 @@ nav {
 
 
 /* ==================================================
-   CREW GRID
+   MAIN CREW GRID
 ================================================== */
 
-.crew-grid {
+.main-crew {
     display: grid;
 
     grid-template-columns: repeat(
@@ -278,11 +306,6 @@ nav {
     gap: 70px 40px;
 }
 
-
-/* ==================================================
-   CREW CARD
-================================================== */
-
 .crew-card {
     cursor: pointer;
 
@@ -291,7 +314,7 @@ nav {
 
 
 /* ==================================================
-   PHOTO
+   MAIN CREW PHOTOS
 ================================================== */
 
 .photo {
@@ -330,7 +353,7 @@ nav {
 
 
 /* ==================================================
-   CREW INFORMATION
+   MAIN CREW INFO
 ================================================== */
 
 .card-info {
@@ -367,6 +390,154 @@ nav {
     color: #777;
 
     font-size: 14px;
+}
+
+
+/* ==================================================
+   CENTER 5TH MAIN MEMBER
+================================================== */
+
+.main-crew .crew-card:nth-child(5) {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 20px);
+
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   MORE MEMBERS SECTION
+================================================== */
+
+.other-members {
+    margin-top: 140px;
+
+    padding-top: 100px;
+
+    border-top: 1px solid #ccc;
+}
+
+.other-header {
+    margin-bottom: 50px;
+}
+
+.other-header p {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #888;
+}
+
+.other-header h2 {
+    margin-top: 10px;
+
+    font-size: clamp(
+        40px,
+        6vw,
+        75px
+    );
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+
+/* ==================================================
+   SMALL CREW GRID
+================================================== */
+
+.small-crew-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        4,
+        minmax(0, 1fr)
+    );
+
+    gap: 25px;
+}
+
+
+/* ==================================================
+   SMALL MEMBER CARDS
+================================================== */
+
+.small-member {
+    cursor: pointer;
+
+    min-width: 0;
+}
+
+.small-photo {
+    width: 100%;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background: #ccc;
+
+    position: relative;
+}
+
+.small-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.small-member:hover .small-photo img {
+    transform: scale(1.06);
+
+    filter: brightness(0.85);
+}
+
+
+/* ==================================================
+   SMALL MEMBER INFO
+================================================== */
+
+.small-info {
+    padding-top: 15px;
+}
+
+.small-info span {
+    font-size: 11px;
+
+    color: #999;
+
+    letter-spacing: 2px;
+}
+
+.small-info h3 {
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+.small-info p {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
 }
 
 
@@ -479,8 +650,6 @@ nav {
     color: transparent;
 
     -webkit-text-stroke: 2px #fff;
-
-    text-stroke: 2px #fff;
 }
 
 .contact-button {
@@ -552,6 +721,7 @@ footer {
 
     .hero {
         padding-left: 10%;
+        padding-right: 10%;
     }
 
     .crew-section,
@@ -562,6 +732,10 @@ footer {
 
     .photo {
         height: 650px;
+    }
+
+    .small-photo {
+        height: 350px;
     }
 }
 
@@ -594,15 +768,31 @@ footer {
         padding-right: 6%;
     }
 
+    .main-crew {
+        gap: 50px 25px;
+    }
+
+    .photo {
+        height: 450px;
+    }
+
+    .main-crew .crew-card:nth-child(5) {
+        width: calc(50% - 12.5px);
+    }
+
+    .small-crew-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .small-photo {
+        height: 350px;
+    }
+
     .about-section {
         padding-left: 6%;
         padding-right: 6%;
 
         gap: 50px;
-    }
-
-    .photo {
-        height: 450px;
     }
 }
 
@@ -640,6 +830,10 @@ footer {
         padding: 120px 25px 80px;
     }
 
+    .hero-banner img {
+        object-position: center;
+    }
+
     .small-title {
         font-size: 11px;
 
@@ -667,6 +861,13 @@ footer {
     }
 
 
+    /* BANNER */
+
+    .banner {
+        height: 220px;
+    }
+
+
     /* CREW */
 
     .crew-section {
@@ -687,7 +888,10 @@ footer {
         letter-spacing: -3px;
     }
 
-    .crew-grid {
+
+    /* MAIN CREW */
+
+    .main-crew {
         grid-template-columns: 1fr;
 
         gap: 55px;
@@ -697,8 +901,46 @@ footer {
         height: 430px;
     }
 
-    .card-info h3 {
-        font-size: 30px;
+    .main-crew .crew-card:nth-child(5) {
+        grid-column: auto;
+
+        width: 100%;
+
+        margin: 0;
+    }
+
+
+    /* MORE MEMBERS */
+
+    .other-members {
+        margin-top: 90px;
+
+        padding-top: 70px;
+    }
+
+    .other-header {
+        margin-bottom: 35px;
+    }
+
+    .other-header h2 {
+        font-size: 45px;
+    }
+
+
+    /* SMALL MEMBERS */
+
+    .small-crew-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 35px 15px;
+    }
+
+    .small-photo {
+        height: 250px;
+    }
+
+    .small-info h3 {
+        font-size: 17px;
     }
 
 
@@ -776,12 +1018,24 @@ footer {
         letter-spacing: -5px;
     }
 
+    .banner {
+        height: 180px;
+    }
+
     .photo {
         height: 380px;
     }
 
+    .small-photo {
+        height: 210px;
+    }
+
     .section-header h2 {
         font-size: 48px;
+    }
+
+    .other-header h2 {
+        font-size: 40px;
     }
 
     .contact-section h2 {
@@ -805,517 +1059,4 @@ footer {
     *::after {
         transition: none !important;
     }
-}}
-
-.hero h1 span {
-    color: transparent;
-    -webkit-text-stroke: 2px white;
-}
-
-.hero-text {
-    margin-top: 40px;
-
-    font-size: 20px;
-    color: #aaa;
-}
-
-.button {
-    display: inline-block;
-
-    margin-top: 35px;
-
-    padding: 16px 25px;
-
-    border: 1px solid white;
-
-    color: white;
-    text-decoration: none;
-
-    font-size: 13px;
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: white;
-    color: #111;
-}
-
-
-/* =========================
-   CREW
-========================= */
-
-.crew-section {
-    padding: 140px 8%;
-    background: #f2f2f2;
-    color: #111;
-}
-
-.section-header {
-    margin-bottom: 70px;
-}
-
-.section-header p {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #777;
-}
-
-.section-header h2 {
-    margin-top: 10px;
-
-    font-size: clamp(45px, 8vw, 100px);
-    line-height: 0.9;
-
-    font-weight: 900;
-}
-
-
-.crew-grid {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 50px;
-}
-
-
-.crew-card {
-    cursor: pointer;
-}
-
-
-.photo {
-    height: 500px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #ccc;
-
-    font-size: 14px;
-    letter-spacing: 4px;
-
-    transition: 0.4s;
-}
-
-.crew-card:hover .photo {
-    transform: scale(0.98);
-    background: #aaa;
-}
-
-
-.card-info {
-    position: relative;
-
-    padding-top: 20px;
-}
-
-
-.number {
-    font-size: 12px;
-    color: #999;
-}
-
-
-.card-info h3 {
-    font-size: 35px;
-
-    margin-top: 5px;
-
-    font-weight: 900;
-}
-
-
-.card-info > p:last-child {
-    color: #777;
-    margin-top: 5px;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-section {
-    min-height: 80vh;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    padding: 140px 8%;
-
-    gap: 100px;
-}
-
-
-.about-left p {
-    font-size: 13px;
-    letter-spacing: 4px;
-    color: #888;
-}
-
-
-.about-left h2 {
-    margin-top: 20px;
-
-    font-size: clamp(50px, 7vw, 100px);
-
-    line-height: 0.9;
-
-    font-weight: 900;
-}
-
-
-.about-right {
-    max-width: 500px;
-
-    align-self: center;
-}
-
-
-.about-right p {
-    font-size: 22px;
-    line-height: 1.5;
-
-    color: #bbb;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section {
-    min-height: 80vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 100px 20px;
-
-    background: #000;
-}
-
-
-.contact-section > p {
-    letter-spacing: 5px;
-    font-size: 13px;
-}
-
-
-.contact-section h2 {
-    margin: 25px 0 40px;
-
-    font-size: clamp(70px, 14vw, 180px);
-
-    line-height: 0.8;
-
-    font-weight: 900;
-}
-
-
-.contact-section h2 span {
-    color: transparent;
-
-    -webkit-text-stroke: 2px white;
-}
-
-
-.contact-button {
-    padding: 18px 30px;
-
-    border: 1px solid white;
-
-    color: white;
-
-    text-decoration: none;
-
-    font-weight: bold;
-    letter-spacing: 2px;
-
-    transition: 0.3s;
-}
-
-
-.contact-button:hover {
-    background: white;
-    color: black;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 25px 6%;
-
-    display: flex;
-    justify-content: space-between;
-
-    background: #000;
-
-    border-top: 1px solid #222;
-
-    color: #666;
-
-    font-size: 11px;
-    letter-spacing: 2px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    nav {
-        padding: 20px;
-    }
-
-    .nav-links {
-        display: none;
-    }
-
-    .hero {
-        padding: 120px 25px;
-    }
-
-    .hero h1 {
-        font-size: 85px;
-        letter-spacing: -5px;
-    }
-
-    .crew-section {
-        padding: 90px 25px;
-    }
-
-    .crew-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .photo {
-        height: 400px;
-    }
-
-    .about-section {
-        grid-template-columns: 1fr;
-
-        padding: 90px 25px;
-
-        gap: 50px;
-    }
-
-    .about-right p {
-        font-size: 18px;
-    }
-
-    footer {
-        padding: 20px;
-
-        flex-direction: column;
-        gap: 10px;
-    }
-   /* =========================================
-   BANNER
-========================================= */
-
-.banner {
-    width: 100%;
-    height: 350px;
-
-    overflow: hidden;
-
-    background: #222;
-}
-
-.banner img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* =========================================
-   5 MAIN CREW MEMBERS
-========================================= */
-
-.main-crew {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-/* Make the 5th person centered */
-
-.main-crew .crew-card:nth-child(5) {
-    grid-column: 1 / -1;
-
-    width: calc(50% - 20px);
-
-    margin: 0 auto;
-}
-
-
-/* =========================================
-   OTHER MEMBERS
-========================================= */
-
-.other-members {
-    margin-top: 140px;
-
-    padding-top: 100px;
-
-    border-top: 1px solid #ccc;
-}
-
-.other-header {
-    margin-bottom: 50px;
-}
-
-.other-header p {
-    font-size: 12px;
-
-    letter-spacing: 4px;
-
-    color: #888;
-}
-
-.other-header h2 {
-    margin-top: 10px;
-
-    font-size: clamp(40px, 6vw, 75px);
-
-    font-weight: 900;
-
-    letter-spacing: -3px;
-}
-
-
-/* =========================================
-   SMALL MEMBER GRID
-========================================= */
-
-.small-crew-grid {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 25px;
-}
-
-
-/* =========================================
-   SMALL MEMBER
-========================================= */
-
-.small-member {
-    cursor: pointer;
-}
-
-.small-photo {
-    width: 100%;
-
-    height: 280px;
-
-    overflow: hidden;
-
-    background: #ccc;
-}
-
-.small-photo img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: transform 0.5s ease;
-}
-
-.small-member:hover .small-photo img {
-    transform: scale(1.06);
-}
-
-
-.small-info {
-    padding-top: 15px;
-}
-
-.small-info span {
-    font-size: 11px;
-
-    color: #999;
-
-    letter-spacing: 2px;
-}
-
-.small-info h3 {
-    margin-top: 5px;
-
-    font-size: 20px;
-
-    font-weight: 900;
-}
-
-.small-info p {
-    margin-top: 5px;
-
-    color: #777;
-
-    font-size: 12px;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 700px) {
-
-    .banner {
-        height: 220px;
-    }
-
-    .main-crew .crew-card:nth-child(5) {
-        grid-column: auto;
-
-        width: 100%;
-
-        margin: 0;
-    }
-
-    .small-crew-grid {
-        grid-template-columns: repeat(2, 1fr);
-
-        gap: 30px 15px;
-    }
-
-    .small-photo {
-        height: 250px;
-    }
-
-    .other-members {
-        margin-top: 90px;
-
-        padding-top: 70px;
-    }
-}
 }
