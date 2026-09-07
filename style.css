@@ -1130,4 +1130,192 @@ footer {
         flex-direction: column;
         gap: 10px;
     }
+   /* =========================================
+   BANNER
+========================================= */
+
+.banner {
+    width: 100%;
+    height: 350px;
+
+    overflow: hidden;
+
+    background: #222;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================
+   5 MAIN CREW MEMBERS
+========================================= */
+
+.main-crew {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* Make the 5th person centered */
+
+.main-crew .crew-card:nth-child(5) {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 20px);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   OTHER MEMBERS
+========================================= */
+
+.other-members {
+    margin-top: 140px;
+
+    padding-top: 100px;
+
+    border-top: 1px solid #ccc;
+}
+
+.other-header {
+    margin-bottom: 50px;
+}
+
+.other-header p {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #888;
+}
+
+.other-header h2 {
+    margin-top: 10px;
+
+    font-size: clamp(40px, 6vw, 75px);
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+}
+
+
+/* =========================================
+   SMALL MEMBER GRID
+========================================= */
+
+.small-crew-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================================
+   SMALL MEMBER
+========================================= */
+
+.small-member {
+    cursor: pointer;
+}
+
+.small-photo {
+    width: 100%;
+
+    height: 280px;
+
+    overflow: hidden;
+
+    background: #ccc;
+}
+
+.small-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.small-member:hover .small-photo img {
+    transform: scale(1.06);
+}
+
+
+.small-info {
+    padding-top: 15px;
+}
+
+.small-info span {
+    font-size: 11px;
+
+    color: #999;
+
+    letter-spacing: 2px;
+}
+
+.small-info h3 {
+    margin-top: 5px;
+
+    font-size: 20px;
+
+    font-weight: 900;
+}
+
+.small-info p {
+    margin-top: 5px;
+
+    color: #777;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .banner {
+        height: 220px;
+    }
+
+    .main-crew .crew-card:nth-child(5) {
+        grid-column: auto;
+
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .small-crew-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 30px 15px;
+    }
+
+    .small-photo {
+        height: 250px;
+    }
+
+    .other-members {
+        margin-top: 90px;
+
+        padding-top: 70px;
+    }
+}
 }
