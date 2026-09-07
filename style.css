@@ -1,0 +1,434 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111;
+    color: #fff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 6%;
+
+    z-index: 100;
+
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            #333 0%,
+            #111 40%
+        );
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.small-title {
+    font-size: 14px;
+    letter-spacing: 6px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(80px, 16vw, 220px);
+    line-height: 0.8;
+
+    font-weight: 900;
+    letter-spacing: -10px;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+}
+
+.hero-text {
+    margin-top: 40px;
+
+    font-size: 20px;
+    color: #aaa;
+}
+
+.button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 25px;
+
+    border: 1px solid white;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: white;
+    color: #111;
+}
+
+
+/* =========================
+   CREW
+========================= */
+
+.crew-section {
+    padding: 140px 8%;
+    background: #f2f2f2;
+    color: #111;
+}
+
+.section-header {
+    margin-bottom: 70px;
+}
+
+.section-header p {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #777;
+}
+
+.section-header h2 {
+    margin-top: 10px;
+
+    font-size: clamp(45px, 8vw, 100px);
+    line-height: 0.9;
+
+    font-weight: 900;
+}
+
+
+.crew-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 50px;
+}
+
+
+.crew-card {
+    cursor: pointer;
+}
+
+
+.photo {
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ccc;
+
+    font-size: 14px;
+    letter-spacing: 4px;
+
+    transition: 0.4s;
+}
+
+.crew-card:hover .photo {
+    transform: scale(0.98);
+    background: #aaa;
+}
+
+
+.card-info {
+    position: relative;
+
+    padding-top: 20px;
+}
+
+
+.number {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.card-info h3 {
+    font-size: 35px;
+
+    margin-top: 5px;
+
+    font-weight: 900;
+}
+
+
+.card-info > p:last-child {
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    min-height: 80vh;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 140px 8%;
+
+    gap: 100px;
+}
+
+
+.about-left p {
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: #888;
+}
+
+
+.about-left h2 {
+    margin-top: 20px;
+
+    font-size: clamp(50px, 7vw, 100px);
+
+    line-height: 0.9;
+
+    font-weight: 900;
+}
+
+
+.about-right {
+    max-width: 500px;
+
+    align-self: center;
+}
+
+
+.about-right p {
+    font-size: 22px;
+    line-height: 1.5;
+
+    color: #bbb;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    min-height: 80vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background: #000;
+}
+
+
+.contact-section > p {
+    letter-spacing: 5px;
+    font-size: 13px;
+}
+
+
+.contact-section h2 {
+    margin: 25px 0 40px;
+
+    font-size: clamp(70px, 14vw, 180px);
+
+    line-height: 0.8;
+
+    font-weight: 900;
+}
+
+
+.contact-section h2 span {
+    color: transparent;
+
+    -webkit-text-stroke: 2px white;
+}
+
+
+.contact-button {
+    padding: 18px 30px;
+
+    border: 1px solid white;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+
+.contact-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px 6%;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: #000;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 120px 25px;
+    }
+
+    .hero h1 {
+        font-size: 85px;
+        letter-spacing: -5px;
+    }
+
+    .crew-section {
+        padding: 90px 25px;
+    }
+
+    .crew-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo {
+        height: 400px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+
+        padding: 90px 25px;
+
+        gap: 50px;
+    }
+
+    .about-right p {
+        font-size: 18px;
+    }
+
+    footer {
+        padding: 20px;
+
+        flex-direction: column;
+        gap: 10px;
+    }
+}
