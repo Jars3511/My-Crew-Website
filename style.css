@@ -1,6 +1,6 @@
-/* =========================
-   GENERAL
-========================= */
+/* ==================================================
+   RESET
+================================================== */
 
 * {
     margin: 0;
@@ -14,55 +14,76 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
     background: #111;
+
     color: #fff;
+
+    overflow-x: hidden;
 }
 
 
-/* =========================
+/* ==================================================
    NAVIGATION
-========================= */
+================================================== */
 
 nav {
     position: fixed;
+
     top: 0;
     left: 0;
 
     width: 100%;
 
+    height: 80px;
+
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
 
-    padding: 25px 6%;
+    justify-content: space-between;
 
-    z-index: 100;
+    padding: 0 6%;
+
+    z-index: 1000;
 
     background: rgba(17, 17, 17, 0.85);
-    backdrop-filter: blur(10px);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .logo {
     font-size: 22px;
+
     font-weight: 900;
-    letter-spacing: 3px;
+
+    letter-spacing: 4px;
+
+    white-space: nowrap;
 }
 
 .nav-links {
     display: flex;
+
+    align-items: center;
+
     gap: 30px;
 }
 
 .nav-links a {
-    color: white;
+    color: #fff;
+
     text-decoration: none;
 
-    font-size: 13px;
-    font-weight: bold;
+    font-size: 12px;
 
-    letter-spacing: 1px;
+    font-weight: 700;
 
-    transition: 0.3s;
+    letter-spacing: 2px;
+
+    transition: opacity 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -70,43 +91,721 @@ nav {
 }
 
 
-/* =========================
+/* ==================================================
    HERO
-========================= */
+================================================== */
 
 .hero {
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
 
-    padding: 120px 8%;
+    padding: 140px 8% 100px;
+
+    position: relative;
 
     background:
         radial-gradient(
             circle at 80% 30%,
-            #333 0%,
-            #111 40%
+            #383838 0%,
+            #191919 25%,
+            #111 55%
         );
 }
 
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            rgba(255,255,255,0.02) 50%,
+            transparent 100%
+        );
+
+    pointer-events: none;
+}
+
 .hero-content {
-    max-width: 900px;
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1100px;
 }
 
 .small-title {
     font-size: 14px;
-    letter-spacing: 6px;
-    margin-bottom: 20px;
+
+    letter-spacing: 7px;
+
+    color: #aaa;
+
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: clamp(80px, 16vw, 220px);
+    font-size: clamp(
+        90px,
+        17vw,
+        220px
+    );
+
+    line-height: 0.78;
+
+    font-weight: 900;
+
+    letter-spacing: -12px;
+}
+
+.hero h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 2px #fff;
+
+    text-stroke: 2px #fff;
+}
+
+.hero-text {
+    margin-top: 55px;
+
+    font-size: 20px;
+
+    color: #aaa;
+
+    max-width: 500px;
+}
+
+
+/* ==================================================
+   GENERAL BUTTON
+================================================== */
+
+.button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 17px 27px;
+
+    border: 1px solid #fff;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.button:hover {
+    background: #fff;
+
+    color: #111;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   CREW SECTION
+================================================== */
+
+.crew-section {
+    padding: 150px 8%;
+
+    background: #f2f2f2;
+
+    color: #111;
+}
+
+.section-header {
+    margin-bottom: 80px;
+}
+
+.section-header p {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #777;
+}
+
+.section-header h2 {
+    margin-top: 15px;
+
+    font-size: clamp(
+        60px,
+        9vw,
+        120px
+    );
+
+    line-height: 0.82;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+}
+
+
+/* ==================================================
+   CREW GRID
+================================================== */
+
+.crew-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+    gap: 70px 40px;
+}
+
+
+/* ==================================================
+   CREW CARD
+================================================== */
+
+.crew-card {
+    cursor: pointer;
+
+    min-width: 0;
+}
+
+
+/* ==================================================
+   PHOTO
+================================================== */
+
+.photo {
+    width: 100%;
+
+    height: 550px;
+
+    overflow: hidden;
+
+    background: #ccc;
+
+    position: relative;
+}
+
+.photo img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+}
+
+.crew-card:hover .photo img {
+    transform: scale(1.06);
+
+    filter: brightness(0.85);
+}
+
+
+/* ==================================================
+   CREW INFORMATION
+================================================== */
+
+.card-info {
+    position: relative;
+
+    padding-top: 20px;
+}
+
+.number {
+    font-size: 12px;
+
+    color: #999;
+
+    letter-spacing: 2px;
+}
+
+.card-info h3 {
+    margin-top: 6px;
+
+    font-size: clamp(
+        26px,
+        3vw,
+        38px
+    );
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.card-info > p:last-child {
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   ABOUT SECTION
+================================================== */
+
+.about-section {
+    min-height: 80vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 150px 8%;
+
+    background: #111;
+}
+
+.about-left p {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #777;
+}
+
+.about-left h2 {
+    margin-top: 20px;
+
+    font-size: clamp(
+        55px,
+        7vw,
+        105px
+    );
+
+    line-height: 0.85;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+}
+
+.about-right {
+    max-width: 520px;
+
+    align-self: center;
+}
+
+.about-right p {
+    margin-bottom: 25px;
+
+    font-size: 21px;
+
+    line-height: 1.5;
+
+    color: #aaa;
+}
+
+
+/* ==================================================
+   CONTACT SECTION
+================================================== */
+
+.contact-section {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background: #000;
+}
+
+.contact-section > p {
+    font-size: 13px;
+
+    letter-spacing: 6px;
+
+    color: #aaa;
+}
+
+.contact-section h2 {
+    margin: 30px 0 50px;
+
+    font-size: clamp(
+        80px,
+        14vw,
+        180px
+    );
+
     line-height: 0.8;
 
     font-weight: 900;
-    letter-spacing: -10px;
+
+    letter-spacing: -8px;
 }
+
+.contact-section h2 span {
+    color: transparent;
+
+    -webkit-text-stroke: 2px #fff;
+
+    text-stroke: 2px #fff;
+}
+
+.contact-button {
+    display: inline-block;
+
+    padding: 18px 30px;
+
+    border: 1px solid #fff;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #fff;
+
+    color: #000;
+
+    transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    min-height: 80px;
+
+    padding: 25px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #000;
+
+    border-top: 1px solid #222;
+
+    color: #666;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==================================================
+   LARGE SCREENS
+================================================== */
+
+@media (min-width: 1600px) {
+
+    .hero {
+        padding-left: 10%;
+    }
+
+    .crew-section,
+    .about-section {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .photo {
+        height: 650px;
+    }
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        padding: 0 4%;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .crew-section {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .about-section {
+        padding-left: 6%;
+        padding-right: 6%;
+
+        gap: 50px;
+    }
+
+    .photo {
+        height: 450px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    /* NAV */
+
+    nav {
+        height: 70px;
+
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 18px;
+
+        letter-spacing: 3px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100svh;
+
+        padding: 120px 25px 80px;
+    }
+
+    .small-title {
+        font-size: 11px;
+
+        letter-spacing: 5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(
+            75px,
+            23vw,
+            120px
+        );
+
+        letter-spacing: -6px;
+    }
+
+    .hero h1 span {
+        -webkit-text-stroke: 1.5px #fff;
+    }
+
+    .hero-text {
+        margin-top: 40px;
+
+        font-size: 17px;
+    }
+
+
+    /* CREW */
+
+    .crew-section {
+        padding: 90px 25px;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+        font-size: clamp(
+            50px,
+            15vw,
+            80px
+        );
+
+        letter-spacing: -3px;
+    }
+
+    .crew-grid {
+        grid-template-columns: 1fr;
+
+        gap: 55px;
+    }
+
+    .photo {
+        height: 430px;
+    }
+
+    .card-info h3 {
+        font-size: 30px;
+    }
+
+
+    /* ABOUT */
+
+    .about-section {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        padding: 100px 25px;
+
+        gap: 60px;
+    }
+
+    .about-left h2 {
+        font-size: clamp(
+            50px,
+            14vw,
+            80px
+        );
+
+        letter-spacing: -3px;
+    }
+
+    .about-right p {
+        font-size: 18px;
+    }
+
+
+    /* CONTACT */
+
+    .contact-section {
+        min-height: 70vh;
+
+        padding: 80px 20px;
+    }
+
+    .contact-section h2 {
+        font-size: clamp(
+            70px,
+            20vw,
+            120px
+        );
+
+        letter-spacing: -5px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        min-height: auto;
+
+        padding: 25px 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 72px;
+
+        letter-spacing: -5px;
+    }
+
+    .photo {
+        height: 380px;
+    }
+
+    .section-header h2 {
+        font-size: 48px;
+    }
+
+    .contact-section h2 {
+        font-size: 65px;
+    }
+}
+
+
+/* ==================================================
+   REDUCED MOTION
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}}
 
 .hero h1 span {
     color: transparent;
