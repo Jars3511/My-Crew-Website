@@ -3,387 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="theme-color" content="#080808">
     <title>MY CREW</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <!-- ================= NAV ================= -->
-
-    <nav>
-        <div class="logo">MY CREW</div>
+    <nav class="nav">
+        <a class="logo" href="#home" data-setting="siteName">MY CREW</a>
 
         <div class="nav-links">
             <a href="#home">HOME</a>
             <a href="#crew">CREW</a>
             <a href="#about">ABOUT</a>
             <a href="#contact">CONTACT</a>
+            <a href="settings.html" class="settings-link" aria-label="Open settings">⚙</a>
         </div>
     </nav>
 
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-image" aria-hidden="true">
+                <img src="20260815_193505.jpg" alt="">
+            </div>
+            <div class="hero-gradient" aria-hidden="true"></div>
+            <div class="hero-grain" aria-hidden="true"></div>
 
-    <!-- ================= HERO ================= -->
+            <div class="hero-content">
+                <p class="eyebrow reveal" data-setting="heroEyebrow">WELCOME TO</p>
 
-    <section id="home" class="hero">
+                <h1 class="hero-title reveal reveal-delay-1">
+                    <span data-setting="heroTitleLine1">MY</span>
+                    <span class="outline" data-setting="heroTitleLine2">CREW.</span>
+                </h1>
 
-        <div class="hero-content">
+                <p class="hero-text reveal reveal-delay-2" data-setting="heroSubtitle">
+                    One crew. One team. One family.
+                </p>
 
-            <p class="small-title">WELCOME TO</p>
+                <a href="#crew" class="button reveal reveal-delay-3">
+                    MEET THE CREW <span>↓</span>
+                </a>
+            </div>
 
-            <h1>
-                MY<br>
-                <span>CREW.</span>
-            </h1>
+            <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
+        </section>
 
-            <p class="hero-text">
-                One crew. One team. One family.
-            </p>
+        <section id="crew" class="crew-section">
+            <div class="section-header">
+                <div>
+                    <p class="eyebrow dark">THE PEOPLE</p>
+                    <h2>MEET<br>THE CREW</h2>
+                </div>
+                <p class="section-count">09<br><span>MEMBERS</span></p>
+            </div>
 
-            <a href="#crew" class="button">
-                MEET THE CREW ↓
+            <div class="main-crew">
+                <article class="crew-card">
+                    <div class="photo"><img src="20240725_101905.jpg" alt="Matthew"></div>
+                    <div class="card-info">
+                        <span class="number">01</span>
+                        <h3 data-setting="member1Name">Matthew</h3>
+                        <p data-setting="member1Role">Founder / Leader</p>
+                    </div>
+                </article>
+
+                <article class="crew-card">
+                    <div class="photo"><img src="person2.jpg" alt="Friend 2"></div>
+                    <div class="card-info">
+                        <span class="number">02</span>
+                        <h3 data-setting="member2Name">FRIEND #2</h3>
+                        <p data-setting="member2Role">The Chaos Coordinator</p>
+                    </div>
+                </article>
+
+                <article class="crew-card">
+                    <div class="photo"><img src="IMG_8253.JPG" alt="Jared Drumming"></div>
+                    <div class="card-info">
+                        <span class="number">03</span>
+                        <h3 data-setting="member3Name">Jared C. Summerlin</h3>
+                        <p data-setting="member3Role">Professional Pigeon Racer</p>
+                    </div>
+                </article>
+
+                <article class="crew-card">
+                    <div class="photo"><img src="person4.jpg" alt="Friend 4"></div>
+                    <div class="card-info">
+                        <span class="number">04</span>
+                        <h3 data-setting="member4Name">FRIEND #4</h3>
+                        <p data-setting="member4Role">Designated Driver</p>
+                    </div>
+                </article>
+
+                <article class="crew-card featured-card">
+                    <div class="photo"><img src="person5.jpg" alt="Friend 5"></div>
+                    <div class="card-info">
+                        <span class="number">05</span>
+                        <h3 data-setting="member5Name">FRIEND #5</h3>
+                        <p data-setting="member5Role">Member</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="other-members">
+                <div class="other-header">
+                    <p class="eyebrow dark">THE REST OF THE CREW</p>
+                    <h2>MORE MEMBERS</h2>
+                </div>
+
+                <div class="small-crew-grid">
+                    <article class="small-member">
+                        <div class="small-photo"><img src="person6.jpg" alt="Friend 6"></div>
+                        <div class="small-info"><span>06</span><h3 data-setting="member6Name">FRIEND #6</h3><p data-setting="member6Role">Member</p></div>
+                    </article>
+
+                    <article class="small-member">
+                        <div class="small-photo"><img src="person7.jpg" alt="Friend 7"></div>
+                        <div class="small-info"><span>07</span><h3 data-setting="member7Name">FRIEND #7</h3><p data-setting="member7Role">Member</p></div>
+                    </article>
+
+                    <article class="small-member">
+                        <div class="small-photo"><img src="person8.jpg" alt="Friend 8"></div>
+                        <div class="small-info"><span>08</span><h3 data-setting="member8Name">FRIEND #8</h3><p data-setting="member8Role">Member</p></div>
+                    </article>
+
+                    <article class="small-member">
+                        <div class="small-photo"><img src="person9.jpg" alt="Friend 9"></div>
+                        <div class="small-info"><span>09</span><h3 data-setting="member9Name">FRIEND #9</h3><p data-setting="member9Role">Member</p></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-left">
+                <p class="eyebrow">OUR STORY</p>
+                <h2 data-setting="aboutTitle">MORE THAN<br>JUST FRIENDS.</h2>
+            </div>
+
+            <div class="about-right">
+                <p data-setting="aboutText1">We're a group of friends who somehow ended up becoming a crew.</p>
+                <p data-setting="aboutText2">From random adventures to completely terrible decisions, this is where we keep track of it all.</p>
+                <a href="#contact" class="button">GET IN TOUCH <span>→</span></a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <p class="eyebrow">WANT TO JOIN?</p>
+            <h2>LET'S<br><span>LINK UP.</span></h2>
+            <a href="mailto:happytrees94@gmail.com" class="contact-button" data-email-link>
+                <span data-setting="contactButton">CONTACT THE CREW</span>
             </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= BANNER ================= -->
-
-    <section class="banner">
-
-        <img src="20260815_193505.jpg" alt="Crew Banner">
-
-    </section>
-
-
-    <!-- ================= CREW ================= -->
-
-    <section id="crew" class="crew-section">
-
-        <div class="section-header">
-
-            <p>THE PEOPLE</p>
-
-            <h2>
-                MEET<br>
-                THE CREW
-            </h2>
-
-        </div>
-
-
-        <!-- ================= 5 MAIN MEMBERS ================= -->
-
-        <div class="crew-grid main-crew">
-
-
-            <!-- PERSON 1 -->
-
-            <div class="crew-card">
-
-                <div class="photo">
-                    <img src="20240725_101905.jpg" alt="Matthew">
-                </div>
-
-                <div class="card-info">
-
-                    <p class="number">01</p>
-
-                    <h3>Matthew</h3>
-
-                    <p>Founder / Leader</p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERSON 2 -->
-
-            <div class="crew-card">
-
-                <div class="photo">
-                    <img src="person2.jpg" alt="Person 2">
-                </div>
-
-                <div class="card-info">
-
-                    <p class="number">02</p>
-
-                    <h3>FRIEND #2</h3>
-
-                    <p>The Chaos Coordinator</p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERSON 3 -->
-
-            <div class="crew-card">
-
-                <div class="photo">
-                    <img src="IMG_8253.JPG" alt="Jared Drumming">
-                </div>
-
-                <div class="card-info">
-
-                    <p class="number">03</p>
-
-                    <h3>Jared C. Summerlin</h3>
-
-                    <p>Professional Pigeon Racer</p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERSON 4 -->
-
-            <div class="crew-card">
-
-                <div class="photo">
-                    <img src="person4.jpg" alt="Person 4">
-                </div>
-
-                <div class="card-info">
-
-                    <p class="number">04</p>
-
-                    <h3>FRIEND #4</h3>
-
-                    <p>Designated Driver</p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PERSON 5 -->
-
-            <div class="crew-card">
-
-                <div class="photo">
-                    <img src="person5.jpg" alt="Person 5">
-                </div>
-
-                <div class="card-info">
-
-                    <p class="number">05</p>
-
-                    <h3>FRIEND #5</h3>
-
-                    <p>Member</p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- ================= OTHER MEMBERS ================= -->
-
-        <div class="other-members">
-
-            <div class="other-header">
-
-                <p>THE REST OF THE CREW</p>
-
-                <h2>MORE MEMBERS</h2>
-
-            </div>
-
-
-            <div class="small-crew-grid">
-
-
-                <!-- SMALL MEMBER 1 -->
-
-                <div class="small-member">
-
-                    <div class="small-photo">
-
-                        <img
-                            src="person6.jpg"
-                            alt="Person 6"
-                        >
-
-                    </div>
-
-                    <div class="small-info">
-
-                        <span>06</span>
-
-                        <h3>FRIEND #6</h3>
-
-                        <p>Member</p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SMALL MEMBER 2 -->
-
-                <div class="small-member">
-
-                    <div class="small-photo">
-
-                        <img
-                            src="person7.jpg"
-                            alt="Person 7"
-                        >
-
-                    </div>
-
-                    <div class="small-info">
-
-                        <span>07</span>
-
-                        <h3>FRIEND #7</h3>
-
-                        <p>Member</p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SMALL MEMBER 3 -->
-
-                <div class="small-member">
-
-                    <div class="small-photo">
-
-                        <img
-                            src="person8.jpg"
-                            alt="Person 8"
-                        >
-
-                    </div>
-
-                    <div class="small-info">
-
-                        <span>08</span>
-
-                        <h3>FRIEND #8</h3>
-
-                        <p>Member</p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- SMALL MEMBER 4 -->
-
-                <div class="small-member">
-
-                    <div class="small-photo">
-
-                        <img
-                            src="person9.jpg"
-                            alt="Person 9"
-                        >
-
-                    </div>
-
-                    <div class="small-info">
-
-                        <span>09</span>
-
-                        <h3>FRIEND #9</h3>
-
-                        <p>Member</p>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about" class="about-section">
-
-        <div class="about-left">
-
-            <p>OUR STORY</p>
-
-            <h2>
-                MORE THAN<br>
-                JUST FRIENDS.
-            </h2>
-
-        </div>
-
-
-        <div class="about-right">
-
-            <p>
-                We're a group of friends who somehow ended up
-                becoming a crew.
-            </p>
-
-            <p>
-                From random adventures to completely terrible
-                decisions, this is where we keep track of it all.
-            </p>
-
-            <a href="#contact" class="button">
-                GET IN TOUCH →
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact" class="contact-section">
-
-        <p>WANT TO JOIN?</p>
-
-        <h2>
-            LET'S<br>
-            <span>LINK UP.</span>
-        </h2>
-
-        <a
-            href="mailto:happytrees94@gmail.com"
-            class="contact-button"
-        >
-            CONTACT THE CREW
-        </a>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
+        </section>
+    </main>
 
     <footer>
-
-        <p>© 2026 MY CREW</p>
-
-        <p>BUILT BY THE CREW.</p>
-
+        <p>© <span data-year>2026</span> <span data-setting="siteName">MY CREW</span></p>
+        <p data-setting="footerText">BUILT BY THE CREW.</p>
     </footer>
 
+    <script>
+        const defaults = {
+            siteName: "MY CREW",
+            heroEyebrow: "WELCOME TO",
+            heroTitleLine1: "MY",
+            heroTitleLine2: "CREW.",
+            heroSubtitle: "One crew. One team. One family.",
+            bannerOpacity: 35,
+            member1Name: "Matthew",
+            member1Role: "Founder / Leader",
+            member2Name: "FRIEND #2",
+            member2Role: "The Chaos Coordinator",
+            member3Name: "Jared C. Summerlin",
+            member3Role: "Professional Pigeon Racer",
+            member4Name: "FRIEND #4",
+            member4Role: "Designated Driver",
+            member5Name: "FRIEND #5",
+            member5Role: "Member",
+            member6Name: "FRIEND #6",
+            member6Role: "Member",
+            member7Name: "FRIEND #7",
+            member7Role: "Member",
+            member8Name: "FRIEND #8",
+            member8Role: "Member",
+            member9Name: "FRIEND #9",
+            member9Role: "Member",
+            aboutTitle: "MORE THAN<br>JUST FRIENDS.",
+            aboutText1: "We're a group of friends who somehow ended up becoming a crew.",
+            aboutText2: "From random adventures to completely terrible decisions, this is where we keep track of it all.",
+            contactButton: "CONTACT THE CREW",
+            footerText: "BUILT BY THE CREW."
+        };
 
+        const saved = JSON.parse(localStorage.getItem("myCrewSettings") || "{}");
+        const settings = { ...defaults, ...saved };
+
+        document.querySelectorAll("[data-setting]").forEach(el => {
+            const key = el.dataset.setting;
+            if (settings[key] !== undefined) el.innerHTML = settings[key];
+        });
+
+        document.querySelector(".hero-image img").style.opacity =
+            Math.max(0, Math.min(100, Number(settings.bannerOpacity))) / 100;
+
+        document.querySelectorAll("[data-email-link]").forEach(link => {
+            link.href = "mailto:happytrees94@gmail.com";
+        });
+
+        document.querySelectorAll("[data-year]").forEach(el => {
+            el.textContent = new Date().getFullYear();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY CREW — Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+    <div id="login-screen" class="screen">
+        <div class="login-card">
+            <div class="settings-mark">⚙</div>
+            <p class="eyebrow">PRIVATE AREA</p>
+            <h1>CREW<br><span>SETTINGS.</span></h1>
+            <p class="login-subtitle">Enter the crew password to edit the site.</p>
+
+            <form id="login-form">
+                <label for="password">PASSWORD</label>
+                <div class="password-wrap">
+                    <input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+                    <button type="button" id="toggle-password">SHOW</button>
+                </div>
+                <p id="login-error" class="error"></p>
+                <button class="primary-button" type="submit">UNLOCK SETTINGS →</button>
+            </form>
+
+            <a class="back-link" href="index.html">← BACK TO SITE</a>
+        </div>
+    </div>
+
+    <div id="settings-app" class="hidden">
+        <header class="settings-nav">
+            <a href="index.html" class="brand">MY CREW</a>
+            <div>
+                <a href="index.html" class="view-site">VIEW SITE ↗</a>
+                <button id="logout" class="ghost-button">LOCK</button>
+            </div>
+        </header>
+
+        <main class="settings-container">
+            <div class="settings-heading">
+                <p class="eyebrow">CONTROL PANEL</p>
+                <h1>EDIT<br><span>YOUR CREW.</span></h1>
+                <p>Change the text below and hit save. Your settings are stored in this browser.</p>
+            </div>
+
+            <form id="settings-form">
+                <section class="settings-section">
+                    <div class="section-title"><span>01</span><h2>HERO</h2></div>
+
+                    <div class="field">
+                        <label for="heroEyebrow">Welcome text</label>
+                        <input id="heroEyebrow" data-key="heroEyebrow" type="text">
+                    </div>
+
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="heroTitleLine1">Main title — line 1</label>
+                            <input id="heroTitleLine1" data-key="heroTitleLine1" type="text">
+                        </div>
+                        <div class="field">
+                            <label for="heroTitleLine2">Main title — line 2</label>
+                            <input id="heroTitleLine2" data-key="heroTitleLine2" type="text">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="heroSubtitle">Subtitle</label>
+                        <input id="heroSubtitle" data-key="heroSubtitle" type="text">
+                    </div>
+
+                    <div class="field opacity-field">
+                        <div class="range-label">
+                            <label for="bannerOpacity">Banner opacity</label>
+                            <output id="opacity-value">35%</output>
+                        </div>
+                        <input id="bannerOpacity" data-key="bannerOpacity" type="range" min="0" max="100" step="1">
+                        <div class="range-scale"><span>HIDDEN</span><span>VISIBLE</span></div>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="section-title"><span>02</span><h2>MAIN CREW</h2></div>
+
+                    <div id="main-members"></div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="section-title"><span>03</span><h2>OTHER MEMBERS</h2></div>
+
+                    <div id="small-members"></div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="section-title"><span>04</span><h2>ABOUT</h2></div>
+
+                    <div class="field">
+                        <label for="aboutTitle">About heading</label>
+                        <textarea id="aboutTitle" data-key="aboutTitle" rows="3"></textarea>
+                        <small>Use &lt;br&gt; to create a line break.</small>
+                    </div>
+
+                    <div class="field">
+                        <label for="aboutText1">About paragraph 1</label>
+                        <textarea id="aboutText1" data-key="aboutText1" rows="4"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="aboutText2">About paragraph 2</label>
+                        <textarea id="aboutText2" data-key="aboutText2" rows="4"></textarea>
+                    </div>
+                </section>
+
+                <section class="settings-section">
+                    <div class="section-title"><span>05</span><h2>FOOTER</h2></div>
+
+                    <div class="field">
+                        <label for="siteName">Site name</label>
+                        <input id="siteName" data-key="siteName" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label for="footerText">Footer text</label>
+                        <input id="footerText" data-key="footerText" type="text">
+                    </div>
+
+                    <div class="field">
+                        <label for="contactButton">Contact button</label>
+                        <input id="contactButton" data-key="contactButton" type="text">
+                    </div>
+                </section>
+
+                <div class="save-bar">
+                    <span id="save-status">Unsaved changes</span>
+                    <div>
+                        <button type="button" id="reset" class="danger-button">RESET</button>
+                        <button type="submit" class="primary-button">SAVE CHANGES ✓</button>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script src="settings.js"></script>
+</body>
+</html>
